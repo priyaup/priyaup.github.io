@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-color: #081b29;
+  --second-bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.navbar {
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: .3s;
+}
+
+.nav-link:hover {
+  color: var(--main-color);
+}
+
+.navbar-brand:hover{
+  color: var(--main-color);
+}
+
+.nav-item.active .nav-link {
+  color: var(--main-color);
+  font-weight: bold; 
+}
+
+.navbar-brand {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.nav-link {
+  color: var(--text-color);
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-left: 3.5rem;
+}
+
+.nav-link :active {
+  color: var(--main-color);
+}
+
+.selfIntro {
+  margin-top: 5rem;
+  padding: 2rem 0; 
+}
+
+.selfIntro h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.selfIntro .text-animate {
+  position: relative;
+  width: 32.8rem;
+}
+
+.selfIntro .text-animate h2 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: transparent;
+  -webkit-text-stroke: 0.7px var(--main-color);
+  background-image: linear-gradient(var(--main-color), var(--main-color));
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: homeBgText 6s linear infinite;
+  animation-delay: 2s;
+}
+
+.selfIntro .text-animate h2::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  animation: homeCursorText 6s linear infinite;
+  animation-delay: 2s;
+}
+
+
+@keyframes homeBgText {
+
+  0%,
+  10%,
+  100%{
+    background-position: -33rem 0;
+  }
+
+  65%,
+  85%{
+    background-position: 0 0;
+  }
+}
+
+@keyframes homeCursorText {
+
+  0%,
+  10%,
+  80%{
+    width: 0;
+  }
+
+  65%,
+  78%,
+  85%{
+    width: 100%;
+    opacity: 1;
+  }
+
+  75%,
+  81%{
+    opacity: 0;
+  }
+}
+
+.selfIntro p {
+  font-size: 1.4rem;
+}
+
+ .selfIntro .image {
+  background: url('../image/priya.jpeg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+a.btn.btn-lg {
+    padding: 1.2rem;
+}
+
+.btn-box {
+  position: relative;
+  width: 34.5rem;
+  height: 5rem;
+}
+
+.btn-box .btn {
+  position: relative;
+  background: var(--main-color);
+  width: 15rem;
+  height: 100%;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: var(--bg-color);
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.btn-box .btn:nth-child(1) {
+  background: transparent;
+  color: var(--main-color);
+}
+
+.btn-box .btn:nth-child(1):hover {
+  color: var(--bg-color);
+}
+
+.btn-box .btn:nth-child(1)::before {
+  background: var(--main-color);
+}
+
+.btn-box .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn-box .btn:hover::before {
+  width: 100%;
+}
+
+.home-sci {
+  position: absolute;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-sci a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--main-color);
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.home-sci a:hover {
+  color: var(--bg-color);
+}
+
+.home-sci a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--main-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bgcolor{
+ background: var(--second-bg-color);
+ margin-top: 15rem;
+ padding: 1rem 0;
+}
+
+.about{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.aboutImg {
+  position: relative;
+  width:25rem;
+  height: 25rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading{
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+}
+
+span{
+	color: var(--main-color);
+}
+
+.about{
+  padding-bottom: 3rem;
+}
+
+.aboutImg img {
+  position: relative;
+  width: 100%; /* Adjust the width and height as needed */
+  height: 100%; /* Adjust the width and height as needed */
+  overflow: hidden;
+  border-radius: 50%; /* This ensures the image is clipped to the container */
+}
+
+.aboutImg .circle-spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--main-color);
+  border-top: .2rem solid var(--second-bg-color);
+  border-bottom: .2rem solid var(--second-bg-color);
+  border-left: .2rem solid var(--main-color);
+  border-right: .2rem solid var(--main-color);
+  border-radius: 50%;
+  animation: aboutSpinner 8s linear infinite;
+}
+
+@keyframes aboutSpinner {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+
+.about-content h3{
+	font-size: 2.6rem;
+}
+
+.about-content p{
+  font-size: 1.6rem;
+}
+
+.btn-box.btns{
+	display: inline-block;
+	width: 15rem;
+}
+
+.btn-box.btns a::before{
+	background: var(--second-bg-color);
+}
+
+
+.education-column{
+	padding-right: 4.5rem;
+}
+
+.education-column .title{
+	font-size: 2.5rem;
+	margin:0 0 1.5rem 2rem;
+}
+
+
+.education-column .education-box{
+	border-left: .3rem solid var(--main-color);
+}
+
+.education-box .education-content{
+	position: relative;
+	padding-left: 2rem;
+}
+
+.education-box .education-content::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -0.8rem;
+	width: 1.5rem;
+	height: 1.5rem;
+  background: var(--main-color);
+  border-radius: 50%;
+}
+
+.education-content .content{
+	position: relative;
+	padding: 1.5rem;
+	border: .2rem solid var(--main-color);
+	border-radius: .6rem;
+	margin-bottom: 2rem;
+	overflow: hidden;
+}
+
+.education-content .content::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: var(--second-bg-color);
+	z-index: -1;
+	transition: .5s;
+}
+
+.education-content .content:hover::before{
+  width: 100%;
+}
+
+.education-content .content h3{
+	font-size: 2rem;
+}
+
+.education-content .content p{
+	font-size: 1.6;
+}
+.skills{
+	padding-bottom: 7rem;
+}
+
+.skill-column .title{
+	font-size: 2.5rem;
+	margin: 0 0 1.5rem;
+}
+
+.skill-box .skill-content{
+	position: relative;
+	border: .2rem solid var(--main-color);
+	border-radius: .6rem;
+	padding: .5rem 1.5rem;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.skill-box .skill-content::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: -1;
+  transition: .5s;
+}
+
+.skill-box .skill-content:hover::before{
+	width: 100%;
+}
+
+.skill-content .prgs{
+	padding: 1rem 0;
+}
+
+.skill-content .prgs h3{
+	font-size: 1.7rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.skill-content .prgs h3 span{
+	color: var(--text-color);
+}
+
+.skill-content .prgs .bar{
+	height: 2.5rem;
+	border-radius: .6rem;
+	border: .2rem solid var(--main-color);
+	padding: .5rem;
+	margin: 1rem 0;
+}
+
+.skill-content .prgs .bar span{
+	display: block;
+	height: 100%;
+	border-radius: .3rem;
+	background: var(--main-color);
+}
+
+.skill-column:nth-child(1) .skill-content .prgs:nth-child(1) .bar span{
+	width: 95%;
+}
+
+.skill-column:nth-child(1) .skill-content .prgs:nth-child(2) .bar span{
+	width: 95%;
+}
+
+.skill-column:nth-child(1) .skill-content .prgs:nth-child(3) .bar span{
+	width: 95%;
+}
+
+.skill-column:nth-child(1) .skill-content .prgs:nth-child(4) .bar span{
+	width: 60%;
+}
+
+.skill-column:nth-child(1) .skill-content .prgs:nth-child(5) .bar span{
+	width: 45%;
+}
+
+.skill-column:nth-child(1) .skill-content .prgs:nth-child(6) .bar span{
+	width: 45%;
+}
+
+.skill-column:nth-child(1) .skill-content .prgs:nth-child(7) .bar span{
+	width: 70%;
+}
+
+
+.skill-column:nth-child(2) .skill-content .prgs:nth-child(1) .bar span{
+	width: 70%;
+}
+
+.skill-column:nth-child(2) .skill-content .prgs:nth-child(2) .bar span{
+	width: 75%;
+}
+
+.skill-column:nth-child(2) .skill-content .prgs:nth-child(3) .bar span{
+	width: 80%;
+}
+
+.skill-column:nth-child(2) .skill-content .prgs:nth-child(4) .bar span{
+	width: 75%;
+}
+
+.skill-column:nth-child(2) .skill-content .prgs:nth-child(5) .bar span{
+	width: 90%;
+}
+
+.skill-column:nth-child(2) .skill-content .prgs:nth-child(6) .bar span{
+	width: 80%;
+}
+
+.skill-column:nth-child(2) .skill-content .prgs:nth-child(7) .bar span{
+	width: 95%;
+}	 
+
+.contact{
+	min-height: 100px; 
+  padding-top: 9rem;
+}
+
+.contact form{
+	max-width: 70rem;
+	margin:0 auto;
+	padding-top: 2rem;
+	text-align: center
+ }
+.contact form .input-box .input-field{
+  position: relative;
+  width: 49%;
+  margin: .8rem 0;
+}
+
+.contact form .input-box .input-field input,
+.contact form  .textarea-field textarea {
+	width: 100%;
+	height: 100%;
+	padding: 1.5rem;
+	font-size: 1.6rem;
+	color: var(--text-color);
+	background: transparent;
+	border-radius: .6rem;
+	border: .2rem solid var(--main-color);
+}
+
+.contact form .input-box .input-field input::placeholder,
+.contact form  .textarea-field textarea::placeholder{
+	color: var(--text-color);
+}
+
+.contact form .focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--second-bg-color);
+  border-radius: .6rem;
+  z-index: -1;
+  transition: .5s;
+}
+
+.contact form  .input-field input:focus ~ .focus,
+.contact form  .input-field input:valid ~ .focus,
+.contact form .textarea-field textarea:focus ~ .focus,
+.contact form .textarea-field textarea:valid ~ .focus{
+  width: 100%;
+}
+
+.contact form  .textarea-field{
+	position: relative;
+	margin: .8rem 0 2.7rem;
+	display: flex;
+}
+
+.contact form  .textarea-field textarea{
+	resize: none;
+}
+
+.contact form  .btn-box .btns .btn{
+	cursor: pointer;
+}
+
+
+.footer p{
+	font-size: 1.6rem;
+}
+
+.footer-iconTop a{
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: .8rem;
+	background: var(--main-color);
+	border: .2rem solid var(--main-color);
+	border-radius: .6rem;
+	z-index: 1;
+	overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer-iconTop a::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: var(--second-bg-color);
+	z-index: -1;
+  transition: .5s;
+}
+
+.footer-iconTop a:hover::before{
+  width: 100%;
+}
+
+.footer-iconTop a i{
+	font-size: 1.8rem;
+	color: var(--bg-color);
+  transition: .5s;
+} 
+
+.footer-iconTop a:hover i{
+  color: var(--main-color);
+}
+
+/* Define the initial state */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Define the animated state */
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
