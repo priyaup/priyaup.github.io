@@ -413,7 +413,25 @@ span{
   transform: translateY(-0.2rem);
 }
 
+.btn-box3 .btn{
+  position: relative;
+  background: var(--main-color);
+  width: 10rem;
+  height: 100%;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.8rem;
+  color: var(--bg-color);
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
 
+.btn-box3 .btn:hover {
+  background: var(--bg-color);
+  color: var(--main-color);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.2rem);
+}
 
 .card:hover {
   transform: scale(1.05);
